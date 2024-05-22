@@ -34,7 +34,6 @@ public class MainController {
 
     @PostMapping("/del")
     public RedirectView delete(@ModelAttribute("id") int id) {
-//        HumanConfToDB humanConfToDB = applicationContext.getBean(HumanConfToDB.class);
         humanConfToDB.delete(id);
         return new RedirectView("/");
     }
