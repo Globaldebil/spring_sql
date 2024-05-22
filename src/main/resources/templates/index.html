@@ -1,0 +1,36 @@
+<!doctype html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>База данных</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Хуита из базы данных</h1>
+
+<table border="1">
+    <tr>
+        <th>id</th>
+        <th>Имя</th>
+        <th>Фамилия</th>
+    </tr>
+
+    <tr th:each="lst : ${list}">
+        <td th:utext="${lst.id}">id</td>
+        <td th:utext="${lst.name}">Имя</td>
+        <td th:utext="${lst.last_name}">Фамилия</td>
+    </tr>
+
+</table>
+
+<form action="#" th:action="@{/add}" method="post" modelAttribute="human">
+    Имя: <input type="text" name="name"/><br />
+    Фамилия: <input type="text" name="last_name"/><br />
+    <button type="submit">Добавить</button>
+</form>
+<form action="#" th:action="@{/del}" method="post" modelAttribute="id">
+    Id для удаления: <input type="text" name="id"/><br/>
+    <button type="submit">Удалить</button>
+</form>
+</body>
+</html>
