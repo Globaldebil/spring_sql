@@ -28,7 +28,7 @@
     Фамилия: <input type="text" name="last_name"/><br />
     <button type="submit">Добавить</button>
 </form>
-<form action="#" th:action="@{/del}" method="post" modelAttribute="id">
+<form action="#" th:action="@{/del}" method="delete" modelAttribute="id">
     Id для удаления: <input type="text" name="id"/><br/>
     <button type="submit">Удалить</button>
 </form>

@@ -32,7 +32,7 @@ public class MainController {
         return new RedirectView("/");
     }
 
-    @PostMapping("/del")
+    @DeleteMapping("/del")
     public RedirectView delete(@ModelAttribute("id") int id) {
         humanConfToDB.delete(id);
         return new RedirectView("/");
